@@ -1,0 +1,90 @@
+import random
+import time
+
+Bot = random.randint(1, 3)
+if Bot == 1:
+    Bot_Choise = 'Stone'
+if Bot == 2:
+    Bot_Choise = 'Paper'
+if Bot == 3:
+    Bot_Choise = 'Scissors'
+Score = 0
+User_Score = 0
+Bot_Score = 0
+
+print('[!]StonePaperScissors[!]')
+print('[#]Your change:')
+print('[1] Stone')
+print('[2] Paper')
+print('[3] Scissors')
+while Score != 5:
+    time.sleep(1)
+    User = int(input('[?] >> '))
+    if User == 1:
+        print('\n[#]Your choise: Stone')
+        print('[#]Opponent choise: {}'.format(Bot_Choise))
+        time.sleep(1)
+        if Bot == 1:
+            print('\n[!] Draw')
+            time.sleep(1)
+            print('[$]Score:\n [#]Bot: {}\n [#]User: {}'.format(Bot_Score, User_Score))
+        if Bot == 2:
+            print('\n[!] You lose')
+            time.sleep(1)
+            Bot_Score += 1
+            Score += 1
+            print('[$]Score:\n [#]Bot: {}\n [#]User: {}'.format(Bot_Score, User_Score))
+        if Bot == 3:
+            print('\n[!] You win')
+            time.sleep(1)
+            User_Score += 1
+            Score += 1
+            print('[$]Score:\n [#]Bot: {}\n [#]User: {}'.format(Bot_Score, User_Score))
+    elif User == 2:
+        print('\n[#]Your choise: Paper')
+        print('[#]Opponent choise: {}'.format(Bot_Choise))
+        time.sleep(1)
+        if Bot == 1:
+            print('\n[!] You win')
+            time.sleep(1)
+            User_Score += 1
+            Score += 1
+            print('[$]Score:\n [#]Bot: {}\n [#]User: {}'.format(Bot_Score, User_Score))
+        if Bot == 2:
+            print('\n[!] Draw')
+            time.sleep(1)
+            print('[$]Score:\n [#]Bot: {}\n [#]User: {}'.format(Bot_Score, User_Score))
+        if Bot == 3:
+            print('\n[!] You lose')
+            time.sleep(1)
+            Bot_Score += 1
+            Score += 1
+            print('[$]Score:\n [#]Bot: {}\n [#]User: {}'.format(Bot_Score, User_Score))
+    elif User == 3:
+        print('\n[#]Your choise: Scissors')
+        print('[#]Opponent choise: {}'.format(Bot_Choise))
+        time.sleep(1)
+        if Bot == 1:
+            print('\n[!] You lose')
+            time.sleep(1)
+            Bot_Score += 1
+            Score += 1
+            print('[$]Score:\n [#]Bot: {}\n [#]User: {}'.format(Bot_Score, User_Score))
+        if Bot == 2:
+            print('\n[!] You win')
+            time.sleep(1)
+            User_Score += 1
+            Score += 1
+            print('[$]Score:\n [#]Bot: {}\n [#]User: {}'.format(Bot_Score, User_Score))
+        if Bot == 3:
+            print('\n[!] Draw')
+            time.sleep(1)
+            print('[$]Score:\n [#]Bot: {}\n [#]User: {}'.format(Bot_Score, User_Score))
+    else:
+        print('[!]Error. Please, enter a number')
+time.sleep(2)
+if User_Score < Bot_Score:
+    print('\n[!] YOU LOSE [!]')
+if Bot_Score < User_Score:
+    print('\n[!] YOU WIN [!]')
+print('[#] Game over!')
